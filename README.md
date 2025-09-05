@@ -314,6 +314,10 @@ const transformedData = data.map((item: any) => ({
 }));
 ```
 
+## Demo Video
+
+**Video Link**: [5-Minute Demo Video](https://drive.google.com/file/d/1RpKvpxB8PnNCgN6Fs7_H-o_nf6DJ9MDG/view?usp=sharing)
+
 ## Getting Started
 
 ### Prerequisites

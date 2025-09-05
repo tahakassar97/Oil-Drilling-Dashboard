@@ -25,10 +25,6 @@ This is a comprehensive AI-powered platform for oil drilling companies to manage
 - **Excel parsing** with XLSX library
 - **AI Chatbot** with intelligent responses
 
-### Libraries
-- **UI Library**: Reusable components (`@oil-drilling/ui`)
-- **API Library**: HTTP client and services (`@oil-drilling/api`)
-
 ## 🚀 Deployment Options
 
 ### Option 1: Vercel (Recommended)
