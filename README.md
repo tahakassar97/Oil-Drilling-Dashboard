@@ -318,6 +318,17 @@ const transformedData = data.map((item: any) => ({
 
 **Video Link**: [5-Minute Demo Video](https://drive.google.com/file/d/1RpKvpxB8PnNCgN6Fs7_H-o_nf6DJ9MDG/view?usp=sharing)
 
+## Live Demo
+
+**Deployed Application**: [https://drilling-dashboard-five.vercel.app/dashboard](https://drilling-dashboard-five.vercel.app/dashboard)
+
+The live application is fully functional and demonstrates all features including:
+- Interactive drilling data visualization
+- AI-powered chatbot for data analysis
+- File upload and processing capabilities
+- Responsive design for all devices
+- Real-time data processing and visualization
+
 ## Getting Started
 
 ### Prerequisites
