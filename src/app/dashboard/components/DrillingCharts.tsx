@@ -54,7 +54,7 @@ const DrillingCharts: FC<DrillingChartsProps> = ({ data }) => {
   if (!data || data.length === 0) {
     return (
       <div className="h-[calc(100vh-200px)] flex items-center justify-center text-gray-500">
-        No data available. Please upload a fil.
+        No data available. Please upload a file.
       </div>
     );
   }
@@ -248,25 +248,25 @@ const DrillingCharts: FC<DrillingChartsProps> = ({ data }) => {
   };
 
   return (
-    <div className="w-full h-[600px] bg-white">
-      {/* Three Charts Side by Side */}
-      <div className="flex h-[520px]">
+    <div className="w-full h-full bg-white">
+      {/* Three Charts - Responsive Layout */}
+      <div className="flex flex-col lg:flex-row h-full">
         {/* Rock Composition Chart */}
-        <div className="flex-1 border-r border-gray-300 p-2">
-          <div className="text-center py-2 text-sm font-medium border-b border-gray-200 mb-2">
+        <div className="flex-1 border-r border-gray-300 p-1 sm:p-2 min-h-[300px] lg:min-h-0">
+          <div className="text-center py-1 sm:py-2 text-xs sm:text-sm font-medium border-b border-gray-200 mb-1 sm:mb-2">
             Rock Composition (%)
           </div>
-          <div style={{ height: '450px' }}>
+          <div className="h-[250px] sm:h-[350px] lg:h-[450px]">
             <Line data={rockCompositionChartData} options={rockCompositionOptions} />
           </div>
         </div>
 
         {/* DT Chart */}
-        <div className="flex-1 border-r border-gray-300 p-2">
-          <div className="text-center py-2 text-sm font-medium border-b border-gray-200 mb-2">
+        <div className="flex-1 border-r border-gray-300 p-1 sm:p-2 min-h-[300px] lg:min-h-0">
+          <div className="text-center py-1 sm:py-2 text-xs sm:text-sm font-medium border-b border-gray-200 mb-1 sm:mb-2">
             DT
           </div>
-          <div style={{ height: '450px' }}>
+          <div className="h-[250px] sm:h-[350px] lg:h-[450px]">
             <Line data={dtChartData} options={{
               ...lineChartOptions,
               scales: {
@@ -286,11 +286,11 @@ const DrillingCharts: FC<DrillingChartsProps> = ({ data }) => {
         </div>
 
         {/* GR Chart */}
-        <div className="flex-1 p-2">
-          <div className="text-center py-2 text-sm font-medium border-b border-gray-200 mb-2">
+        <div className="flex-1 p-1 sm:p-2 min-h-[300px] lg:min-h-0">
+          <div className="text-center py-1 sm:py-2 text-xs sm:text-sm font-medium border-b border-gray-200 mb-1 sm:mb-2">
             GR
           </div>
-          <div style={{ height: '450px' }}>
+          <div className="h-[250px] sm:h-[350px] lg:h-[450px]">
             <Line data={grChartData} options={{
               ...lineChartOptions,
               scales: {

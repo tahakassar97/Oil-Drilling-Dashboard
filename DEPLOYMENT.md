@@ -16,7 +16,7 @@ This is a comprehensive AI-powered platform for oil drilling companies to manage
 - **Next.js 15** with App Router
 - **TypeScript** for type safety
 - **Tailwind CSS** for styling
-- **Recharts** for data visualization
+- **react-chartjs-2** for data visualization
 - **Nx Monorepo** for scalable architecture
 
 ### Backend

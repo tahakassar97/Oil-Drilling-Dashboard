@@ -81,27 +81,27 @@ const Dashboard: FC = () => {
   };
 
   return (
-    <main className="bg-white">
-      <header className="flex bg-white backdrop-blur-lg shadow-sm h-[64px] fixed top-0 left-0 right-0 items-center justify-between px-6 border-b border-gray-200 z-50">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-3">
-            <p className="bg-orange-600 text-white px-3 py-1 rounded text-sm font-bold">
+    <main className="bg-white min-h-screen overflow-x-hidden">
+      <header className="flex bg-white backdrop-blur-lg shadow-sm h-14 sm:h-16 fixed top-0 left-0 right-0 items-center justify-between px-3 sm:px-6 border-b border-gray-200 z-50">
+        <div className="flex items-center gap-2 sm:gap-4 min-w-0 flex-1">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <p className="bg-orange-600 text-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm font-bold whitespace-nowrap">
               DEEPBIT
             </p>
-            <h2 className="font-bold text-xl text-gray-800">
+            <h2 className="font-bold text-sm sm:text-lg lg:text-xl text-gray-800 truncate">
               Drill AI Intelligence Platform
             </h2>
           </div>
         </div>
       </header>
 
-      <div className="flex flex-col lg:flex-row gap-3 pt-[64px]">
-        <aside className="w-full lg:w-64 h-auto lg:h-[calc(100vh-64px)] border-r border-gray-200 bg-white shadow-sm">
-          <div className="flex w-full items-center justify-between p-4 border-b border-gray-200">
-            <h4 className="text-lg font-bold text-gray-800">Well List</h4>
+      <div className="flex flex-col lg:flex-row gap-2 sm:gap-3 pt-14 sm:pt-16 overflow-x-hidden">
+        <aside className="w-full lg:w-64 h-auto lg:h-[calc(100vh-4rem)] sm:lg:h-[calc(100vh-4rem)] border-r border-gray-200 bg-white shadow-sm flex-shrink-0">
+          <div className="flex w-full items-center justify-between p-3 sm:p-4 border-b border-gray-200">
+            <h4 className="text-base sm:text-lg font-bold text-gray-800">Well List</h4>
             <button className="text-gray-400 hover:text-gray-600 p-1">
               <svg
-                className="w-5 h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -116,12 +116,12 @@ const Dashboard: FC = () => {
             </button>
           </div>
 
-          <div className="overflow-y-auto h-64 lg:h-[calc(100vh-120px)]">
-            <ul className="px-4 py-2 space-y-2">
+          <div className="overflow-y-auto h-48 sm:h-64 lg:h-[calc(100vh-7rem)]">
+            <ul className="px-3 sm:px-4 py-2 space-y-1 sm:space-y-2">
               {wellList.map((well, index) => (
                 <li
                   key={well.name}
-                  className={`flex flex-col justify-between p-3 rounded-lg cursor-pointer transition-colors border ${
+                  className={`flex flex-col justify-between p-2 sm:p-3 rounded-lg cursor-pointer transition-colors border ${
                     selectedWell?.name === well.name
                       ? "bg-blue-50 border-blue-200"
                       : "hover:bg-gray-50 border-transparent"
@@ -136,18 +136,18 @@ const Dashboard: FC = () => {
                   }
                 >
                   <div className="flex items-center justify-between">
-                    <p className="font-bold text-sm text-gray-800">
+                    <p className="font-bold text-xs sm:text-sm text-gray-800 truncate">
                       {well.name}
                     </p>
                     <div
-                      className={`w-2 h-2 rounded-full ${
+                      className={`w-2 h-2 rounded-full flex-shrink-0 ml-2 ${
                         selectedWell?.name === well.name
                           ? "bg-blue-500"
                           : "bg-gray-300"
                       }`}
                     />
                   </div>
-                  <small className="text-gray-500 text-xs mt-1">
+                  <small className="text-gray-500 text-xs mt-1 truncate">
                     Depth: {well.depth} ft
                   </small>
                 </li>
@@ -156,19 +156,19 @@ const Dashboard: FC = () => {
           </div>
         </aside>
 
-        <div className="flex-1 flex flex-col lg:flex-row bg-white">
+        <div className="flex-1 flex flex-col lg:flex-row bg-white min-w-0">
           {/* Main Content Area */}
-          <section className="flex-1 h-full">
+          <section className="flex-1 h-full min-w-0">
             {/* Navigation Tabs */}
-            <div className="flex items-center justify-between w-full px-6 py-4 border-b border-gray-200">
-              <div className="flex items-center space-x-1">
-                <div className="flex items-center bg-blue-50 border-b-2 border-blue-500 px-4 py-2 rounded-t-lg">
-                  <p className="text-sm font-semibold text-blue-600">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between w-full px-3 sm:px-6 py-3 sm:py-4 border-b border-gray-200 gap-3 sm:gap-0">
+              <div className="flex items-center space-x-1 overflow-x-auto w-full sm:w-auto min-w-0">
+                <div className="flex items-center bg-blue-50 border-b-2 border-blue-500 px-2 sm:px-4 py-2 rounded-t-lg whitespace-nowrap">
+                  <p className="text-xs sm:text-sm font-semibold text-blue-600">
                     Drilling Monitoring
                   </p>
-                  <button className="ml-2 text-gray-400 hover:text-gray-600">
+                  <button className="ml-1 sm:ml-2 text-gray-400 hover:text-gray-600">
                     <svg
-                      className="w-4 h-4"
+                      className="w-3 h-3 sm:w-4 sm:h-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -182,11 +182,11 @@ const Dashboard: FC = () => {
                     </svg>
                   </button>
                 </div>
-                <div className="flex items-center px-4 py-2 text-gray-500 hover:text-gray-700 cursor-pointer">
-                  <p className="text-sm font-semibold">Offset Wells Map</p>
-                  <button className="ml-2 text-gray-400 hover:text-gray-600">
+                <div className="flex items-center px-2 sm:px-4 py-2 text-gray-500 hover:text-gray-700 cursor-pointer whitespace-nowrap">
+                  <p className="text-xs sm:text-sm font-semibold">Offset Wells Map</p>
+                  <button className="ml-1 sm:ml-2 text-gray-400 hover:text-gray-600">
                     <svg
-                      className="w-4 h-4"
+                      className="w-3 h-3 sm:w-4 sm:h-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -200,11 +200,11 @@ const Dashboard: FC = () => {
                     </svg>
                   </button>
                 </div>
-                <div className="flex items-center px-4 py-2 text-gray-500 hover:text-gray-700 cursor-pointer">
-                  <p className="text-sm font-semibold">Bit Summary</p>
-                  <button className="ml-2 text-gray-400 hover:text-gray-600">
+                <div className="flex items-center px-2 sm:px-4 py-2 text-gray-500 hover:text-gray-700 cursor-pointer whitespace-nowrap">
+                  <p className="text-xs sm:text-sm font-semibold">Bit Summary</p>
+                  <button className="ml-1 sm:ml-2 text-gray-400 hover:text-gray-600">
                     <svg
-                      className="w-4 h-4"
+                      className="w-3 h-3 sm:w-4 sm:h-4"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -219,9 +219,9 @@ const Dashboard: FC = () => {
                   </button>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 w-full sm:w-auto">
                 <Button
-                  className="bg-green-500 hover:bg-green-600 text-white px-4 text-sm rounded-md flex items-center gap-2"
+                  className="bg-green-500 hover:bg-green-600 text-white px-3 sm:px-4 text-xs sm:text-sm rounded-md flex items-center gap-1 sm:gap-2 flex-1 sm:flex-none"
                   size="sm"
                 >
                   Filter
@@ -230,7 +230,7 @@ const Dashboard: FC = () => {
                 <UploadInput
                   onFileSelect={handleUpload}
                   disabled={isUploading}
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 text-sm rounded-md flex items-center gap-2"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-md flex items-center gap-1 sm:gap-2 flex-1 sm:flex-none"
                 >
                   {isUploading ? "Uploading..." : "Upload"}
                 </UploadInput>
@@ -238,13 +238,13 @@ const Dashboard: FC = () => {
             </div>
 
             {/* Charts Area */}
-            <div className="h-[600px] overflow-y-auto">
+            <div className="h-[400px] sm:h-[500px] lg:h-[600px] overflow-y-auto">
               <DrillingCharts data={uploadedData} />
             </div>
           </section>
 
           {/* Chatbot Sidebar */}
-          <aside className="h-96 lg:h-[calc(100vh-64px)] border-l border-gray-200 shadow-sm">
+          <aside className="w-full lg:w-80 h-80 sm:h-96 lg:h-[calc(100vh-4rem)] border-t lg:border-t-0 lg:border-l border-gray-200 shadow-sm flex-shrink-0">
             <Chatbot
               selectedWell={selectedWell?.name}
               drillingData={uploadedData}
